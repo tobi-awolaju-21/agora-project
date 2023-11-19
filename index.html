@@ -1,76 +1,231 @@
-
 <style>
-    body{
-        margin:0px;
-        padding:0px;
+    body {
+        margin: 0px;
+        padding: 0px;
     }
-    .call{
-    display: block;
-    background-color: rgb(255, 255, 255);
-    width: 100vw;
-    height:100vh;
+
+    .call {
+        display: block;
+        background-color: rgb(255, 255, 255);
+        width: 100vw;
+        height: 100vh;
     }
-    .chat{
-    display:none;
-    background-color: rgb(255, 0, 0);
-    width: 100vw;
-    height:100vh;
+
+    .chat {
+        display: none;
+        background-color: rgb(255, 255, 255);
+        width: 100vw;
+        height: 100vh;
     }
-    .head_nav{
-    height:50px;
-    width:100%;
-    background-color: rgb(188, 188, 188);
+
+    .head_nav {
+        display: flex;
+        justify-content: space-between;
+        /* This will push the button to the right */
+        align-items: center;
+        /* Vertically center the items */
+        height: 50px;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
     }
-    .mid{
-    height:calc(100vh - 100px);
-    width:100%;
+
+    .mid {
+        height: calc(100vh - 100px);
+        width: 100%;
     }
-    .foot_nav{
-    height:50px;
-    width:100%;
-    background-color: rgb(188, 188, 188);
+
+    .foot_nav {
+        display: flex;
+        justify-content: right;
+        height: 50px;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
     }
+
     .button {
-  background-color: rgb(65, 168, 53);
-  color: #fff; /* Corrected the color value */
-  text-align: center;
-  height: 35px;
-  width: 100px;
-  border-radius: 50px;
-  position: relative;
-  top: 7.5px;
-  line-height: 30px; /* Center the text vertically */
-}
+        margin-left: 10px;
+        margin-right: 10px;
+        background-color: rgb(65, 168, 53);
+        color: #fff;
+        /* Corrected the color value */
+        text-align: center;
+        height: 35px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 50px;
+        position: relative;
+        top: 7.5px;
+        line-height: 30px;
+        /* Center the text vertically */
+    }
 
-    </style>
-    
-    <div id ="AgoraCallView" style="width:400px; height:400px;">
+    .head_sub {
+        display: flex;
+        margin: 0px;
+        padding: 0px;
+        width: 100px;
+        justify-content: space-between;
+        /* This will push the button to the right */
+        position: relative;
+        top: -7.5px;
+    }
 
-    <div class="call">
+    h3 {
+        position: relative;
+        top: 7.5px;
+        padding-left: 15px;
+    }
+</style>
+
+<div id="AgoraCallView" style="width:400px; height:400px;">
+
+    <div class="call" id="call">
         <div class="head_nav">
-        <div class="button">Leave</div>
+            <div>
+                <h3>hangout theme</h3>
+                <center>
+                    <div class="head_sub">
+                        <div>members</div>
+                        <div>chats</div>
+                    </div>
+                </center>
+            </div>
+            <div class="button">Leave</div>
         </div>
 
         <div class="mid">
-            something is here too
+<!-- this is mid for calls-->
         </div>
 
 
         <div class="foot_nav">
-            <div class="button">first button</div>
-            <div class="button">first button</div>
-            <div class="button">first button</div>
+            <div class="button">Invite</div>
+            <div class="button" id="chatButton">Chat</div>
+            <div class="button">Raise hand🖐</div>
         </div>
     </div>
 
-    <div class="chat">
-       
+    <div class="chat" id="chat">
+        <div class="head_nav">
+           <div>
+               
+            </div>
+
+        <div style="display: flex;  position: relative;
+        top: -7.5px;">
+            <div class="button" id="callButton">Back</div>
+            <div class="button">leave</div>
+        </div>
+           
+        </div>
+
+        <div class="mid">
+<!-- start of chat mid for chats-->
+<style>
+
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+     /*height: calc(${AgoraCallView_height}px - 20px);*/
+     height:100%
+      
+    }
+    
+    .chat-messages {
+    position: relative;
+    top:25px;
+    flex: 1;
+    overflow-y: scroll;
+    padding: 10px;
+    }
+    
+    .chat-message {
+    padding: 10px;
+    max-width: 60vw;
+    min-width: 10vw;
+    margin-bottom: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    white-space: nowrap;
+    }
+    
+    
+    .chat-message-author {
+    font-weight: bold;
+    }
+    
+    .chat-message-timestamp {
+    font-size: 12px;
+    color: #999;
+    }
+    
+    .chat-input-container {
+    display: flex;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative;
+    top:50px;
+    }
+    
+    #chat-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    }
+    
+    #chat-send-button {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    background-color: rgb(65, 168, 53);
+    color: #fff;
+    border-radius: 50px;
+    width:100px;
+    border: none;
+    cursor: pointer;
+    }
+    
+    </style>
+    
+    
+    <div class="chat-container">
+        <div class="chat-messages">
+            </div>
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Enter your message">
+            <button id="chat-send-button">Send</button>
+        </div>
+    </div>
+    <!--end of chat mid-->
+        </div>
+
+
+        <div class="foot_nav">
+           <!--chat bars-->
+        </div>
     </div>
 
-    </div>
-    
-    
-    
-    
-    
-    
+</div>
+
+<script>
+    document.getElementById('chatButton').addEventListener('click', function() {
+  // Show the chat div
+  document.getElementById('chat').style.display = 'block';
+  
+  // Hide the call div
+  document.getElementById('call').style.display = 'none';
+});
+
+
+document.getElementById('callButton').addEventListener('click', function() {
+  // Show the chat div
+  document.getElementById('chat').style.display = 'none';
+  
+  // Hide the call div
+  document.getElementById('call').style.display = 'block';
+});
+
+</script>
