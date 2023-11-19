@@ -1,11 +1,68 @@
-<!--header for audio call-->
-<script src="//meta-l.cdn.bubble.io/f1698170711419x410554378173609860/AgoraRTC_N-4.19.2.js"></script>
 
-<!--header for chat call-->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<style>
+    body{
+        margin:0px;
+        padding:0px;
+    }
+    .call{
+    display: block;
+    background-color: rgb(255, 255, 255);
+    width: 100vw;
+    height:100vh;
+    }
+    .chat{
+    display:none;
+    background-color: rgb(255, 0, 0);
+    width: 100vw;
+    height:100vh;
+    }
+    .head_nav{
+    height:50px;
+    width:100%;
+    background-color: rgb(188, 188, 188);
+    }
+    .mid{
+    height:calc(100vh - 100px);
+    width:100%;
+    }
+    .foot_nav{
+    height:50px;
+    width:100%;
+    background-color: rgb(188, 188, 188);
+    }
+    .button{
+     background-color: rgb(30, 134, 18);
+     height:35px;
+     width:100px; 
+     border-radius: 50px;
+    }
+    </style>
+    
+    <div id ="AgoraCallView" style="width:400px; height:400px;">
+
+    <div class="call">
+        <div class="head_nav">
+        <div class="button">first button</div>
+        </div>
+
+        <div class="mid">
+            something is here too
+        </div>
 
 
-<div id ="AgoraCallView" style="width:400px; height:400px;"></div>
-<div
-<script src="./callplugin.js"></script>
+        <div class="foot_nav">
+            <div class="button">first button</div>
+        </div>
+    </div>
+
+    <div class="chat">
+       
+    </div>
+
+    </div>
+    
+    
+    
+    
+    
+    
