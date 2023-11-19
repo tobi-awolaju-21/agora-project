@@ -1,4 +1,4 @@
-function(instance, properties, context) {
+//function(instance, properties, context) {
 
     //code for chat
 // Get the HTML element with the ID "AgoraCallView"
@@ -191,4 +191,4 @@ arthur: "arthur",
 }
 });
 
-}
+//}

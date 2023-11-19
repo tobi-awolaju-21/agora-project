@@ -1,5 +1,5 @@
 //plugin code for audio call
-function(instance, properties, context) {
+//function(instance, properties, context) {
     // Get the HTML element with the ID "AgoraCallView"
     var container = document.getElementById("AgoraCallView");
     
@@ -53,8 +53,11 @@ function(instance, properties, context) {
   
      //end of test js
       // start of real js
-      var room_name =properties.room_name;
-      var api_key =properties.api_key;
+     // var room_name =properties.room_name;
+     // var api_key =properties.api_key;
+     var room_name ="deyplway"
+      var api_key ="1220131dc0434406a1462622e90a13af";
+
   
   let options = 
   {
@@ -207,4 +210,4 @@ function(instance, properties, context) {
   
       
       //end of real js
-}
+//}
